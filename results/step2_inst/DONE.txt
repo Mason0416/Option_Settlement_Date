@@ -1,0 +1,10 @@
+1. 資料：FinMind 期貨(TX)/選擇權(TXO)三大法人自 2018-06-05 才有資料，2017-05~2018-06 的 55 筆(選擇權 54 筆)ok 結算日的 fut_/opt_ 指標為 NaN，不進場；現貨三大法人 2017-04-05 起完整。
+2. 全部 ok 結算日 272 筆；對照組(全部進場) n=272 平均 2.98 中位 5.08 勝率 54.0% t=0.63 總計 810 扣前5大 -320。2018-06-13 後同期對照 n=217 平均 3.86 t=0.68。
+3. t 最高：spot_trust_net 正才進場 n=159 平均 8.41 中位 9.68 勝率 57.9% t=1.27 扣前5大 +249（唯一扣掉前5大仍為正者）。
+4. 其次 opt_dealer_dir 正 (t=1.12, 扣前5 +85)、fut_dealer_oi_chg 負 (t=1.06, 扣前5 +29)、fut_trust_oi_chg 正 (t=0.94)、opt_foreign_dir 正 (t=0.90)。
+5. 最差：spot_trust_net 負 (t=-0.71)、opt_dealer_dir 負 (t=-0.24)、fut_dealer_oi_chg 正 (t=-0.21)。
+6. 16 條無一 t>2；以 16 次檢定來看，最高 t=1.27 在隨機情況下也常見，不構成顯著證據。相關係數 |r|<=0.13（最高 spot_trust_net Pearson 0.131）。
+7. 注意：spot_foreign_net 只用 Foreign_Investor；但 2017-12-18 前 FinMind 無 Foreign_Dealer_Self 類別，該期間外資數字可能含外資自營商。自營商現貨 = Dealer_self + Dealer_Hedging。opt 用未平倉「金額」(千元)。
+8. 斷言通過：所有非 NaN 指標的資料日期 = prev_date 且 ≠ 結算日 D。缺漏明細見 missing_indicators.csv。
+9. 獨立驗證(scripts/step2_inst_verify.py, seed 20260925)抽 3 日重算 8 指標：2018-05-02 prev 2018-04-30 OK {'fut_fore;2019-01-30 prev 2019-01-29 OK {'fut_fore;2020-02-05 prev 2020-02-04 OK {'fut_fore;ALL_MATCH;
+10. 未做指標交叉組合、未做門檻最佳化；損益直接取自 step2_gap/trades.csv。

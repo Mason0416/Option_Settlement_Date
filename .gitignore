@@ -1,0 +1,20 @@
+# Secrets / credentials
+.env
+*.pfx
+*.p12
+
+# Logs (Shioaji connection logs print account identifiers)
+*.log
+logs/
+
+# Raw market data (FinMind / Shioaji terms; several GB) — rebuilt by scripts/
+data/
+
+# Raw Shioaji quotes extracted for the OOS test
+results/oos/sj_entry_ticks.csv
+
+# Python / OS
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store

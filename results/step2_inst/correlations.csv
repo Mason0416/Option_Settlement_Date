@@ -1,0 +1,9 @@
+indicator,n,pearson,spearman,first_date
+fut_foreign_oi_chg,217,0.0456,0.0448,2018-06-13
+fut_trust_oi_chg,217,0.0860,0.0763,2018-06-13
+fut_dealer_oi_chg,217,-0.0265,-0.0706,2018-06-13
+opt_foreign_dir,218,0.0528,0.0096,2018-06-06
+opt_dealer_dir,218,0.0199,0.1219,2018-06-06
+spot_foreign_net,272,-0.0112,-0.0440,2017-05-17
+spot_trust_net,272,0.1306,0.1061,2017-05-17
+spot_dealer_net,272,-0.0300,-0.0061,2017-05-17
